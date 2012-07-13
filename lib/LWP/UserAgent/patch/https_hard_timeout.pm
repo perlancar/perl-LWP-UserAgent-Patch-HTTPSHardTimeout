@@ -62,7 +62,6 @@ sub patch_data {
 
 =head1 SYNOPSIS
 
- use LWP::UserAgent;
  use LWP::UserAgent::patch::https_hard_timeout -timeout => 300;
 
 
