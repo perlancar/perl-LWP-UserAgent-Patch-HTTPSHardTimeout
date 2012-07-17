@@ -5,13 +5,15 @@ use strict;
 no warnings;
 use Log::Any '$log';
 
-use parent qw(Module::Patch);
+use Module::Patch 0.07 qw();
+use base qw(Module::Patch);
 
 # VERSION
 
 our %config;
 
 my $p_send_request = sub {
+    my $ctx  = shift;
     my $orig = shift;
 
     my ($self, $request, $arg, $size) = @_;
@@ -41,19 +43,21 @@ my $p_send_request = sub {
 
 sub patch_data {
     return {
+        v => 2,
         config => {
             -timeout => {
                 schema  => 'int*',
                 default => 3600,
             },
         },
-        versions => {
-            '6.04' => {
-                subs => {
-                    send_request => $p_send_request,
-                },
+        patches => [
+            {
+                action => 'wrap',
+                mod_version => qr/^6\.0.+/,
+                sub_name => 'send_request',
+                code => $p_send_request,
             },
-        },
+        ],
     };
 }
 
