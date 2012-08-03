@@ -5,7 +5,7 @@ use strict;
 no warnings;
 use Log::Any '$log';
 
-use Module::Patch 0.07 qw();
+use Module::Patch 0.10 qw();
 use base qw(Module::Patch);
 
 # VERSION
@@ -14,7 +14,7 @@ our %config;
 
 my $p_send_request = sub {
     my $ctx  = shift;
-    my $orig = shift;
+    my $orig = $ctx->{orig};
 
     my ($self, $request, $arg, $size) = @_;
     my $url    = $request->uri;
@@ -43,7 +43,7 @@ my $p_send_request = sub {
 
 sub patch_data {
     return {
-        v => 2,
+        v => 3,
         config => {
             -timeout => {
                 schema  => 'int*',
