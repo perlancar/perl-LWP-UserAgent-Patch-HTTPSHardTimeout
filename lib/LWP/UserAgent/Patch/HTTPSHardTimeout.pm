@@ -1,11 +1,11 @@
-package LWP::UserAgent::patch::https_hard_timeout;
+package LWP::UserAgent::Patch::HTTPSHardTimeout;
 
 use 5.010001;
 use strict;
 no warnings;
 use Log::Any '$log';
 
-use Module::Patch 0.10 qw();
+use Module::Patch 0.12 qw();
 use base qw(Module::Patch);
 
 # VERSION
@@ -62,11 +62,11 @@ sub patch_data {
 }
 
 1;
-# ABSTRACT: Patch module for LWP::UserAgent
+# ABSTRACT: Add hard timeout to HTTPS requests
 
 =head1 SYNOPSIS
 
- use LWP::UserAgent::patch::https_hard_timeout -timeout => 300;
+ use LWP::UserAgent::Patch::HTTPSHardTimeout -timeout => 300;
 
 
 =head1 DESCRIPTION
