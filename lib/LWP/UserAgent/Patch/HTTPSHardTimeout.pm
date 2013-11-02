@@ -74,6 +74,8 @@ sub patch_data {
 This module contains a simple workaround for hanging issue with HTTPS requests.
 It wraps send_request() with an alarm() timeout.
 
+Can be used with L<WWW::Mechanize> because it uses L<LWP::UserAgent>.
+
 
 =head1 FAQ
 
