@@ -6,7 +6,7 @@ package LWP::UserAgent::Patch::HTTPSHardTimeout;
 use 5.010001;
 use strict;
 no warnings;
-use Log::Any::IfLOG '$log';
+use Log::ger;
 
 use Module::Patch 0.12 qw();
 use base qw(Module::Patch);
@@ -23,7 +23,7 @@ my $p_send_request = sub {
     if ($scheme eq 'https' && $config{-timeout} > 0) {
         my $resp;
         eval {
-            $log->tracef("Wrapping send_request() with alarm timeout (%d)",
+            log_trace("Wrapping send_request() with alarm timeout (%d)",
                          $config{-timeout});
             local $SIG{ALRM} = sub { die "alarm\n" };
             alarm $config{-timeout};
