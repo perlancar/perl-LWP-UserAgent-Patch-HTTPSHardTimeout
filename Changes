@@ -1,38 +1,38 @@
-0.070   2018-03-23 (PERLANCAR)
+0.070   2018-03-23  Released-By: PERLANCAR
 
 	- Relax version requirement (6.0.x -> 6.x).
 
 
-0.06    2017-07-10 (PERLANCAR)
+0.06    2017-07-10  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Replace Log::Any with Log::ger.
 
 
-0.05    2015-08-17 (PERLANCAR)
+0.05    2015-08-17  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Switch from Log::Any to Log::Any::IfLOG.
 
 
-0.04    2012-08-09 (SHARYANTO)
+0.04    2012-08-09  Released-By: SHARYANTO
 
         - Rename module
           LWP::UserAgent::{patch::https_hard_timeout,Patch::HTTPSHardTimeout}.
 
 
-0.03    2012-08-03 (SHARYANTO)
+0.03    2012-08-03  Released-By: SHARYANTO
 
         - No functional changes. Adjust to Module::Patch 0.10 (v=3).
 
 
-0.02    2012-07-17 (SHARYANTO)
+0.02    2012-07-17  Released-By: SHARYANTO
 
         - No functional changes. Adjust to Module::Patch 0.07 (v=2).
 
 
-0.01    2012-04-03 (SHARYANTO)
+0.01    2012-04-03  Released-By: SHARYANTO
 
         - First release.
